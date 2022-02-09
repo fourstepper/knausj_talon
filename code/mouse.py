@@ -214,11 +214,13 @@ class Actions:
 
     def mouse_scroll_left(amount: float = 1):
         """Scrolls left"""
-        actions.mouse_scroll(0, -amount * setting_mouse_wheel_horizontal_amount.get())
+        actions.mouse_scroll(
+            0, -amount * setting_mouse_wheel_horizontal_amount.get())
 
     def mouse_scroll_right(amount: float = 1):
         """Scrolls right"""
-        actions.mouse_scroll(0, amount * setting_mouse_wheel_horizontal_amount.get())
+        actions.mouse_scroll(
+            0, amount * setting_mouse_wheel_horizontal_amount.get())
 
     def mouse_scroll_stop():
         """Stops scrolling"""
@@ -247,7 +249,8 @@ class Actions:
     def mouse_move_center_active_window():
         """move the mouse cursor to the center of the currently active window"""
         rect = ui.active_window().rect
-        ctrl.mouse_move(rect.left + (rect.width / 2), rect.top + (rect.height / 2))
+        ctrl.mouse_move(rect.left + (rect.width / 2),
+                        rect.top + (rect.height / 2))
 
 
 def show_cursor_helper(show):

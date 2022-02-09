@@ -113,12 +113,12 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
-    "control": "ctrl",  #'troll':   'ctrl',
-    "shift": "shift",  #'sky':     'shift',
+    "alt": "alt",  # 'alter': 'alt',
+    "troll": "ctrl",  # 'troll':   'ctrl',
+    "shift": "shift",  # 'sky':     'shift',
     "super": "super",
 }
-if app.platform  == "mac":
+if app.platform == "mac":
     modifier_keys["command"] = "cmd"
     modifier_keys["option"] = "alt"
 ctx.lists["self.modifier_key"] = modifier_keys
@@ -137,7 +137,7 @@ punctuation_words = {
     "comma": ",",
     "period": ".",
     "full stop": ".",
-    "semicolon": ";",
+    "semi": ";",
     "colon": ":",
     "forward slash": "/",
     "question mark": "?",
@@ -230,9 +230,19 @@ simple_keys = [
 ]
 
 alternate_keys = {
-    "delete": "backspace",
-    "forward delete": "delete",
-    #'junk': 'backspace',
+    "clap": "enter",
+    "drill": "delete",
+    "delete": "delete",
+    "chuck": "backspace",
+    "junk": "backspace",
+    "scratch": "backspace",
+    "scrape": "escape",
+    "void": "space",
+    "page up": "pageup",
+    "page down": "pagedown",
+
+    "delete": "delete",
+    'junk': 'backspace',
     "page up": "pageup",
     "page down": "pagedown",
 }
@@ -254,7 +264,7 @@ class Actions:
     def move_cursor(s: str):
         """Given a sequence of directions, eg. 'left left up', moves the cursor accordingly using edit.{left,right,up,down}."""
         for d in s.split():
-            if d in ('left','right','up','down'):
+            if d in ('left', 'right', 'up', 'down'):
                 getattr(actions.edit, d)()
             else:
                 raise RuntimeError(f'invalid arrow key: {d}')

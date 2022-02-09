@@ -31,7 +31,6 @@ message details: key("ctrl-d")
 reply [message]: key("ctrl-shift-r")
 react [message]: key("ctrl-shift-e")
 save attachment: key("ctrl-s")
-delete [message]: key("ctrl-shift-d")
 
 # Composer
 send message: key("ctrl-enter")
@@ -39,4 +38,3 @@ expand chat: key("ctrl-shift-x")
 attach [file]: key("ctrl-u")
 remove [link] preview: key("ctrl-p")
 remove [link] attachment: key("ctrl-shift-p")
-

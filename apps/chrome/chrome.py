@@ -4,6 +4,7 @@ ctx = Context()
 mod = Module()
 
 mod.apps.chrome = "app.name: Google Chrome"
+mod.apps.chrome = "app.name: Brave Browser"
 mod.apps.chrome = """
 os: windows
 and app.exe: chrome.exe
@@ -11,6 +12,10 @@ and app.exe: chrome.exe
 mod.apps.chrome = """
 os: mac
 and app.bundle: com.google.Chrome
+"""
+mod.apps.chrome = """
+os: mac
+and app.bundle: com.brave.Browser
 """
 mod.apps.chrome = """
 os: mac
@@ -28,6 +33,7 @@ and app.name: Google-chrome
 ctx.matches = r"""
 app: chrome
 """
+
 
 @ctx.action_class("user")
 class user_actions:
